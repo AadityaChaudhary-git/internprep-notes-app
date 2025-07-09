@@ -1,0 +1,51 @@
+/* src/pages/Dashboard.css */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  height: 100vh;
+}
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dashboard-card {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+}
+
+.dashboard-card h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.user-email {
+  margin-bottom: 25px;
+  font-size: 16px;
+  color: #555;
+}
+
+.dashboard-buttons button {
+  margin: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #6a82fb;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dashboard-buttons button:hover {
+  background-color: #5a72e0;
+}

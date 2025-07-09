@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import './Dashboard.css'; // ✅ Import CSS file
 
 function Dashboard() {
   const [user, setUser] = useState(null);
@@ -26,12 +27,15 @@ function Dashboard() {
   };
 
   return (
-    <div>
-      <h2>Welcome to the Dashboard</h2>
-      {user && <p>Logged in as: <strong>{user.email}</strong></p>}
-      <button onClick={handleLogout}>Logout</button>
-      <br /><br />
-      <button onClick={() => navigate("/notes")}>Go to Notes</button>
+    <div className="dashboard-container">
+      <div className="dashboard-card">
+        <h2>Welcome to the Dashboard</h2>
+        {user && <p className="user-email">Logged in as: <strong>{user.email}</strong></p>}
+        <div className="dashboard-buttons">
+          <button onClick={handleLogout}>Logout</button>
+          <button onClick={() => navigate("/notes")}>Go to Notes</button>
+        </div>
+      </div>
     </div>
   );
 }
