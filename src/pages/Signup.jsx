@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
+import './Signup.css'; // ✅ Import the CSS file
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -22,38 +23,26 @@ function Signup() {
 
   return (
     <div className="signup-container">
-      <h2>Signup</h2>
-      <form onSubmit={handleSignup}>
+      <form onSubmit={handleSignup} className="signup-form">
+        <h2>Create Account</h2>
         <input
           type="email"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
           required
-        /><br /><br />
+        />
         <input
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
           required
-        /><br /><br />
+        />
         <button type="submit">Sign Up</button>
+        <p className="login-link">
+          Already have an account?{" "}
+          <span onClick={() => navigate("/login")}>Login</span>
+        </p>
       </form>
-
-      <p style={{ marginTop: "20px" }}>
-        Already have an account?{" "}
-        <button
-          onClick={() => navigate("/login")}
-          style={{
-            background: "none",
-            border: "none",
-            color: "#007bff",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-        >
-          Go to Login
-        </button>
-      </p>
     </div>
   );
 }
